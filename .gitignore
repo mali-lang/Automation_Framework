@@ -1,0 +1,34 @@
+node_modules
+# Node modules
+node_modules/
+
+# Output and coverage from tests
+output/
+coverage/
+.nyc_output/
+.scannerwork/
+
+output/
+*.png
+*.xml
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# JMeter results
+*.jtl
+*.jmx
+*.xml
+
+# Reports
+*.png
+*.html
+*.pdf
+
+# Mac/Windows system files
+.DS_Store
+Thumbs.db
