@@ -64,4 +64,3 @@ For individual test cases by using tags npx codeceptjs run --grep '@ZAP-10' --pl
 ## For code coverage
 npx nyc npx codeceptjs run --features features/frontend_features/Signup.feature --steps --verbose
 For parallel execution: .\run-delayed-parallel.ps1 
-
