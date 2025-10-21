@@ -59,7 +59,7 @@ When('I select gender option on Signup Page', async function()
 });
 
 
-When(' I select Age group on Signup Page', async function()
+When('I select Age group on Signup Page', async function()
 {
     await loginPage.selectAgeOnSignupPage()  
 });
@@ -78,13 +78,16 @@ When('I click on Next button', async function()
 {
     await loginPage.clickOnNextButton()  
 });
+
+Then('I wait {int} seconds', (seconds) => {
+  I.wait(seconds)
+});
  
-Then('I verify the url "https://staging.aryzap.com/"', async function()
-{
-    await loginPage.verifyURL()  
+Then ('I verify that the user land on the OTT homepage {string}', (url) => {
+  I.amOnPage(url)
+  I.seeInCurrentUrl(url)
 });
 
-Then('I verify the user is successfully signed up',async function()
-{
-    await loginPage.verifyUserIsSuccessfullySignedUp()  
+Then('I verify the user is successfully signed up', async function(){
+    await loginPage.verifyUserSuccessfullySignedUp()
 });

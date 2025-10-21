@@ -1,4 +1,4 @@
-# Automation_Framework# Automation-Testing Framework
+# Automation_Framework
 
 This is a Playwright-based automation framework for testing web application of lobby leader
 
@@ -64,3 +64,5 @@ For individual test cases by using tags npx codeceptjs run --grep '@ZAP-10' --pl
 ## For code coverage
 npx nyc npx codeceptjs run --features features/frontend_features/Signup.feature --steps --verbose
 For parallel execution: .\run-delayed-parallel.ps1 
+
+For parallel execution in multiple browsers:  npx codeceptjs run-multiple parallel --steps

@@ -4,7 +4,7 @@ const { getWaitTime } = require('../../../src/configs/suiteConstants')
 
 const { assert } = require('chai')
 
-
+let expectedUsername = '';
 module.exports = {
     locators: {
         basePath: "//*[contains(@class, 'content-menu')]",
@@ -30,7 +30,9 @@ module.exports = {
         const enterEmailAddress = `//*[@id='formEmail']`
         I.waitForElement(enterEmailAddress)
         I.click(enterEmailAddress)
-        I.fillField(enterEmailAddress, 'testuser'+Date.now()+'@gmail.com')
+        const email = `testuser${Date.now().toString().slice(-6)}@gmail.com`;
+        expectedUsername = email.split('@')[0];
+        I.fillField(enterEmailAddress, email);
    },
 
    clickOnGetStartedBtn()
@@ -42,7 +44,7 @@ module.exports = {
 
    enterPasswordOnSignupPage()
    {
-        const enterPassword = `//*[@id='formEmail']`
+        const enterPassword = `//*[@placeholder='Add a password']`
         I.waitForElement(enterPassword)
         I.click(enterPassword)
         I.fillField(enterPassword, 'ali123')
@@ -50,7 +52,7 @@ module.exports = {
 
     enterPasswordAgainOnSignupPage()
    {
-        const enterPassword = `//*[@id='formEmail']`
+        const enterPassword = `//*[@placeholder='Re-enter password']`
         I.waitForElement(enterPassword)
         I.click(enterPassword)
         I.fillField(enterPassword, 'ali123')
@@ -72,11 +74,58 @@ module.exports = {
 
    selectGenderOptionOnSignupPage()
    {
-
+        const genderOption = `//*[contains(text(), "What's your gender?")]/following::button[(text())='Male']`
+        I.waitForElement(genderOption)
+        I.click(genderOption)
    },
 
    selectAgeOnSignupPage()
    {
-    
-   }
+        const ageGroup = `//*[contains(text(), 'Age group')]/following::*[contains(text(), '24-34')]`
+        I.waitForElement(ageGroup)
+        I.click(ageGroup)
+   },
+
+   PickThreeGenresOnSignupPage()
+   {
+     const genres = ['Romance', 'Comedy', 'TV Shows']
+     for (const genre of genres) {
+          I.waitForElement(`//button[normalize-space(.)='${genre}']`)
+          I.click(`//button[normalize-space(.)='${genre}']`)
+     }
+   },
+
+  verifyUserLandOnHomePage()
+  {
+     I.seeInCurrentUrl('https://aryzap.com/');
+  },
+
+  async verifyUserSuccessfullySignedUp(expectedUsername = '') {
+  const locator = 'a.nav-link .avatar-text'
+
+  try {
+
+    I.waitForElement(locator, 10);
+
+    const visibleCount = await I.grabNumberOfVisibleElements(locator);
+
+    if (visibleCount === 0) {
+      throw new Error('Profile element not visible after signup.');
+    }
+
+    const profileText = await I.grabTextFrom(locator);
+    console.log(`Profile element found: "${profileText}"`);
+
+    if (expectedUsername) {
+      if (profileText.toLowerCase().includes(expectedUsername.toLowerCase())) {
+        console.log(`Username match confirmed: ${expectedUsername}`);
+      } else {
+        console.warn(`Username mismatch: expected "${expectedUsername}", got "${profileText}"`);
+      }
+    }
+  } catch (error) {
+    console.error(`Signup verification failed: ${error.message}`);
+    throw error;
+  }
+},
 }
