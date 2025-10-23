@@ -1,4 +1,4 @@
-const { I, loginPage } = inject()
+const { I, signUpPage } = inject()
 const allure = codeceptjs.container.plugins('allure')
 
 
@@ -7,10 +7,9 @@ Given('I am on homepage Page {string}', (url) => {
   I.seeInCurrentUrl(url)
 });
 
-
 When('I click on Signin Button', async function()
 {
-    await loginPage.clickOnSigninButton()  
+    await signUpPage.clickOnSigninButton()  
 });
 
 Then('I verify signin Page{string}', (url) => {
@@ -20,63 +19,63 @@ Then('I verify signin Page{string}', (url) => {
 
 When('I click on Create an Account Button' , async function()
 {
-    await loginPage.clickOnCreateAnAccountBtn()  
+    await signUpPage.clickOnCreateAnAccountBtn()  
 });
 
 When('I click enter email' , async function()
 {
-    await loginPage.enterEmailAddress()  
+    await signUpPage.enterEmailAddress()  
 });
  
 When('I click on Get Started Button', async function()
 {
-    await loginPage.clickOnGetStartedBtn()  
+    await signUpPage.clickOnGetStartedBtn()  
 });
 
 When('I enter Password on Signup Page', async function()
 {
-    await loginPage.enterPasswordOnSignupPage()  
+    await signUpPage.enterPasswordOnSignupPage()  
 });
 
 When('I enter Password again on Signup Page', async function()
 {
-    await loginPage.enterPasswordAgainOnSignupPage()  
+    await signUpPage.enterPasswordAgainOnSignupPage()  
 });
 
 When('I click on checkbox for accepting terms and conditions', async function()
 {
-    await loginPage.clickOnCheckboxForPrivacy()  
+    await signUpPage.clickOnCheckboxForPrivacy()  
 });
 
 When('I click on Next button on Signin Page', async function()
 {
-    await loginPage.clickOnNextButtonOnSignupPage()  
+    await signUpPage.clickOnNextButtonOnSignupPage()  
 });
 
 When('I select gender option on Signup Page', async function()
 {
-    await loginPage.selectGenderOptionOnSignupPage()  
+    await signUpPage.selectGenderOptionOnSignupPage()  
 });
 
 
 When('I select Age group on Signup Page', async function()
 {
-    await loginPage.selectAgeOnSignupPage()  
+    await signUpPage.selectAgeOnSignupPage()  
 });
 
 When('I click on Next button on Signup Page', async function()
 {
-    await loginPage.clickOnNextButtonOnSignupPage()  
+    await signUpPage.clickOnNextButtonOnSignupPage()  
 });
 
 When('I pick three genres on Signup Page', async function()
 {
-    await loginPage.PickThreeGenresOnSignupPage()  
+    await signUpPage.PickThreeGenresOnSignupPage()  
 });
 
 When('I click on Next button', async function()
 {
-    await loginPage.clickOnNextButton()  
+    await signUpPage.clickOnNextButton()  
 });
 
 Then('I wait {int} seconds', (seconds) => {
@@ -89,5 +88,5 @@ Then ('I verify that the user land on the OTT homepage {string}', (url) => {
 });
 
 Then('I verify the user is successfully signed up', async function(){
-    await loginPage.verifyUserSuccessfullySignedUp()
+    await signUpPage.verifyUserSuccessfullySignedUp()
 });

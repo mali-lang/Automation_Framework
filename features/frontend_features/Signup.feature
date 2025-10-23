@@ -6,7 +6,7 @@ Feature: OTT Signup
     Given I am on homepage Page 'https://staging.aryzap.com/'
 
   @Signup @ARYZAP @ZAP-595
-   Scenario: Signup - Valid branch, counter, language, and credentials
+   Scenario: Signup - Happy path
     When I click on Signin Button
     And I click on Create an Account Button
     And I wait 2 seconds
