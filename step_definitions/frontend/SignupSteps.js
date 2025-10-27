@@ -90,3 +90,4 @@ Then ('I verify that the user land on the OTT homepage {string}', (url) => {
 Then('I verify the user is successfully signed up', async function(){
     await signUpPage.verifyUserSuccessfullySignedUp()
 });
+
