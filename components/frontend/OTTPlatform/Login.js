@@ -27,4 +27,5 @@ module.exports = {
         I.seeInCurrentUrl('https://staging.aryzap.com/')
         console.log('User successfully redirected to homepage: https://staging.aryzap.com/')
     }
+    
 }
