@@ -66,3 +66,5 @@ npx nyc npx codeceptjs run --features features/frontend_features/Signup.feature 
 For parallel execution: .\run-delayed-parallel.ps1 
 
 For parallel execution in multiple browsers:  npx codeceptjs run-multiple parallel --steps
+
+For testing only
