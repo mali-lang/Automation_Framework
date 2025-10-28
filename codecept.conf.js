@@ -102,8 +102,10 @@ exports.config = {
 
   gherkin: {
     features: './features/frontend_features/*.feature',
+    // explicitly include frontend step definition files (glob patterns are not expanded by Codecept require)
     steps: [
-      './step_definitions/frontend/SignupSteps.js',
+      './step_definitions/frontend/LoginSteps.js',
+      './step_definitions/frontend/SignupSteps.js'
     ]
   },
 
