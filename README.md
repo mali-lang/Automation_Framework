@@ -10,7 +10,7 @@ This is a Playwright-based automation framework for testing web application of l
 - GitLab CI/CD integration
 
 1. Clone the repo:
-git clone https://git.wavetec.live/wavetec/automation-testing.git
+git clone https://github.com/mali-lang/Automation_Framework.git 
 cd automation-testing
 
 2. Install dependencies
