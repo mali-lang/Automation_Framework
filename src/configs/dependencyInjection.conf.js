@@ -4,5 +4,3 @@ module.exports = {
 	loginPage: './components/frontend/OTTPlatform/Login.js',
 
 }
-
-// Added space in test12 branch for testing
