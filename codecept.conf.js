@@ -123,7 +123,4 @@ exports.config = {
   },
 
   name: 'Automation_Framework'
-  
 };
-
-// This is something
