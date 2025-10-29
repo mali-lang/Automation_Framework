@@ -3,5 +3,3 @@ module.exports = {
 	signUpPage: './components/frontend/OTTPlatform/Signup.js',
 	loginPage: './components/frontend/OTTPlatform/Login.js',
 }
-
-//Haseeb testing
