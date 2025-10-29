@@ -91,3 +91,4 @@ Then('I verify the user is successfully signed up', async function(){
     await signUpPage.verifyUserSuccessfullySignedUp()
 });
 
+
