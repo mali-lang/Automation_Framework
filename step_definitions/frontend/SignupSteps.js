@@ -37,10 +37,10 @@ When('I enter Password on Signup Page', async function()
     await signUpPage.enterPasswordOnSignupPage()  
 });
 
-When('I enter Password again on Signup Page', async function()
-{
-    await signUpPage.enterPasswordAgainOnSignupPage()  
-});
+// When('I enter Password again on Signup Page', async function()
+// {
+//     await signUpPage.enterPasswordAgainOnSignupPage()  
+// });
 
 When('I click on checkbox for accepting terms and conditions', async function()
 {
