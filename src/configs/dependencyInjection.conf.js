@@ -3,3 +3,5 @@ module.exports = {
 	signUpPage: './components/frontend/OTTPlatform/Signup.js',
 	loginPage: './components/frontend/OTTPlatform/Login.js',
 }
+
+// Lets see the other change
