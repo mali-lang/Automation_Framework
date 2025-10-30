@@ -18,7 +18,7 @@ When('I enter Password on Login Page', async function()
 
 When('I click on checkbox for accepting terms and conditions', async function()
 {
-     await signUpPage.clickOnCheckboxForPrivacy() 
+  await loginPage.clickOnCheckboxForPrivacy() 
 });
 
 When('I click on Next Button on Login Page', async function()
