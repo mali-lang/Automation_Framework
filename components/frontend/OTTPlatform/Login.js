@@ -44,5 +44,5 @@ module.exports = {
     async verifyOnLoginPage() {
         I.seeInCurrentUrl('/login');
     }
-
+//commit
 }
