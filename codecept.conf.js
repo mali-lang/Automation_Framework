@@ -123,5 +123,4 @@ exports.config = {
   },
 
   name: 'Automation_Framework'
-
 };
