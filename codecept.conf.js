@@ -40,8 +40,12 @@ exports.config = {
     I: './steps_file.js',
     loginPage: './components/frontend/OTTPlatform/Login.js',
     logoutPage: './components/frontend/OTTPlatform/Logout.js',
-    searchDramaPage: './components/frontend/OTTPlatform/SearchDrama.js',
-    signupPage: './components/frontend/OTTPlatform/Signup.js'
+    searchPage: './components/frontend/OTTPlatform/SearchDrama.js',
+    signupPage: './components/frontend/OTTPlatform/Signup.js',
+    forgotPasswordPage: './components/frontend/OTTPlatform/ForgotPassword.js',
+    searchShowPage: './components/frontend/OTTPlatform/SearchShow.js',
+    searchTelefilmPage: './components/frontend/OTTPlatform/SearchTelefilm.js',
+    searchStreamPage: './components/frontend/OTTPlatform/SearchStream.js'
   },
 
   gherkin: {
@@ -52,6 +56,10 @@ exports.config = {
       './step_definitions/frontend/ForgotPasswordSteps.js',
       './step_definitions/frontend/SignupSteps.js',
       './step_definitions/frontend/InvalidLoginSteps.js',
+      './step_definitions/frontend/SearchDramaSteps.js',
+      './step_definitions/frontend/SearchShowSteps.js',
+      './step_definitions/frontend/SearchTelefilmSteps.js',
+      './step_definitions/frontend/SearchStreamSteps.js'
     ]
   },
 

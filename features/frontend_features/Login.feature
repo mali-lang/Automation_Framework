@@ -58,8 +58,67 @@ Feature: OTT Login
     @ForgotPassword @ARYZAP @ZAP-600
   Scenario: Forgot Password - Happy path
     
-    And I click on Forgot Password link on Login Page
+    When I click on Forgot Password link on Login Page
     Then I should be navigated to reset Password page 'https://staging.aryzap.com/login'
     When I enter registered email "abdul.haseeb@arytech.com"
     And I click on the Send Reset Link button on Reset Password Page
     Then I should see a message "Please check your inbox for password reset instructions to abdul.haseeb@arytech.com" for password reset
+
+    @SearchDrama @ARYZAP @ZAP-601
+    Scenario: Search Drama - Happy path
+        When I enter email on Login Page
+        And I enter Password on Login Page
+        And I click on checkbox for accepting terms and conditions
+        And I click on Next Button on Login Page
+        And I verify that the user land on the OTT homepage 'https://staging.aryzap.com/'
+        And I click on the search icon on home page
+        And I enter the text "Drama" on home page
+        And I click on the search icon
+        Then  I verify that the user land on the OTT homepage 'https://staging.aryzap.com/search/drama'
+
+    @SearchShow @ARYZAP @ZAP-602
+    Scenario: Search Shows - Happy path
+        When I enter email on Login Page
+        And I enter Password on Login Page
+        And I click on checkbox for accepting terms and conditions
+        And I click on Next Button on Login Page
+        And I click on the shows button on home page
+        And I play any show randomly for 10 seconds and go back
+        And I wait 10 seconds
+        And I click on the back button to go to home page
+        And I click on the profile icon on home page
+        And I click on signout button from the dropdown
+        Then I verify that the user land on the OTT homepage 'https://staging.aryzap.com/'
+
+        @SearchTelefilm @ARYZAP @ZAP-603
+    Scenario: Search Telefilm - Happy path
+        When I enter email on Login Page
+        And I enter Password on Login Page
+        And I click on checkbox for accepting terms and conditions
+        And I click on Next Button on Login Page
+        And I click on the Telefilms button on home page
+        And I play any telefilm randomly for 10 seconds and go back
+        And I wait 10 seconds
+        And I click on the back button to go to home page
+        And I click on the profile icon on home page
+        And I click on signout button from the dropdown
+        Then I verify that the user land on the OTT homepage 'https://staging.aryzap.com/'
+
+        @SearchStream @ARYZAP @ZAP-604
+    Scenario: Search Live Stream - Happy path
+        When I enter email on Login Page
+        And I enter Password on Login Page
+        And I click on checkbox for accepting terms and conditions
+        And I click on Next Button on Login Page
+        And I click on the Streams button on home page
+        And I play any live stream randomly for 10 seconds and go back
+        And I wait 10 seconds
+        And I click on the back button to go to home page
+        And I click on the profile icon on home page
+        And I click on signout button from the dropdown
+        Then I verify that the user land on the OTT homepage 'https://staging.aryzap.com/'
+        
+
+
+
+

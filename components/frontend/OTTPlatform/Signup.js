@@ -94,12 +94,6 @@ module.exports = {
           I.click(`//button[normalize-space(.)='${genre}']`)
      }
    },
-
-  verifyUserLandOnHomePage()
-  {
-     I.seeInCurrentUrl('https://aryzap.com/');
-  },
-
   async verifyUserSuccessfullySignedUp(expectedUsername = '') {
   const locator = 'a.nav-link .avatar-text'
 
